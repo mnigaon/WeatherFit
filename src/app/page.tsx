@@ -126,7 +126,7 @@ export default function HomePage() {
           <div>
             <p className="text-white/50 text-xs uppercase tracking-widest font-medium">Current Location</p>
             <h1 className="text-white text-2xl font-bold mt-0.5">{weather.city}, {weather.country}</h1>
-            <p className="text-white/30 text-xs mt-0.5">Data updated just now</p>
+            <p className="text-white/30 text-xs mt-0.5">via OpenWeather · may vary slightly from other sources</p>
           </div>
           <div className="flex items-center gap-2">
             <button

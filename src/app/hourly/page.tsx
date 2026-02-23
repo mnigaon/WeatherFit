@@ -68,19 +68,21 @@ export default function HourlyPage() {
 
         {/* Temperature bar chart */}
         <div className="animate-fade-up delay-100 bg-white/8 backdrop-blur-md rounded-2xl p-5 border border-white/10 mb-5">
-          <div className="flex items-end justify-between gap-1 h-20 mb-3">
-            {hourly.map((h, i) => {
-              const val = formatTempValue(h.temperature, unit);
-              const heightPct = ((val - minTemp) / tempRange) * 70 + 30;
-              return (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
+          {/* 80px 높이의 relative 컨테이너 안에서 각 bar를 절대 위치로 바닥부터 올림 */}
+          <div className="relative mb-3" style={{ height: '80px' }}>
+            <div className="absolute inset-0 flex items-end gap-1">
+              {hourly.map((h, i) => {
+                const val = formatTempValue(h.temperature, unit);
+                const heightPct = Math.round(((val - minTemp) / tempRange) * 70 + 30);
+                return (
                   <div
-                    className="w-full rounded-t-lg bg-gradient-to-t from-cyan-500 to-blue-400 opacity-80 transition-all"
+                    key={i}
+                    className="flex-1 rounded-t-lg bg-gradient-to-t from-cyan-500 to-blue-400 opacity-80 transition-all"
                     style={{ height: `${heightPct}%` }}
                   />
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <div className="flex justify-between">
             {hourly.map((h, i) => (

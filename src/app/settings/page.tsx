@@ -132,8 +132,13 @@ export default function SettingsPage() {
         </div>
 
         {/* App Info */}
-        <div className="animate-fade-up delay-300 mt-8 text-center">
-          <p className="text-white/20 text-xs">WeatherFit · Powered by OpenWeather</p>
+        <div className="animate-fade-up delay-300 mt-8">
+          <div className="bg-white/5 rounded-2xl p-4 border border-white/10 text-center space-y-1.5">
+            <p className="text-white/40 text-xs font-medium">WeatherFit · Powered by OpenWeather</p>
+            <p className="text-white/25 text-xs leading-relaxed">
+              Temperature data is sourced from OpenWeatherMap and may differ slightly from other weather services (e.g. Apple Weather, Google Weather). Minor variations are normal across different data providers.
+            </p>
+          </div>
         </div>
       </div>
     </div>
