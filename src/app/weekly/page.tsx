@@ -79,8 +79,8 @@ export default function WeeklyPage() {
               <div
                 key={day.date}
                 className={`animate-fade-up rounded-2xl border transition-all overflow-hidden ${isToday
-                    ? 'bg-white/20 border-white/30'
-                    : 'bg-white/8 border-white/10 hover:border-white/20'
+                  ? 'bg-white/20 border-white/30'
+                  : 'bg-white/8 border-white/10 hover:border-white/20'
                   }`}
                 style={{ animationDelay: `${i * 60}ms` }}
               >
@@ -123,7 +123,7 @@ export default function WeeklyPage() {
         {hasRain && (
           <div className="mt-4 animate-fade-up bg-blue-500/15 backdrop-blur-md rounded-2xl p-4 border border-blue-400/25">
             <p className="text-blue-200 text-sm">
-              ☂️ Rain is expected this week — don't forget your umbrella!
+              ☂️ Rain is expected this week — don&apos;t forget your umbrella!
             </p>
           </div>
         )}

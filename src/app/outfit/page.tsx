@@ -53,7 +53,7 @@ export default function OutfitPage() {
             <div className="w-8 h-8 bg-white/15 rounded-xl flex items-center justify-center">
               <Shirt size={16} className="text-white" />
             </div>
-            <h1 className="text-white text-2xl font-bold">Today's Outfit</h1>
+            <h1 className="text-white text-2xl font-bold">Today&apos;s Outfit</h1>
           </div>
           <p className="text-white/40 text-sm ml-11">
             {weather.city} · {formatTemp(weather.temperature, unit)} · {weather.description}
