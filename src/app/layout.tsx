@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'WeatherFit Team' }],
   creator: 'WeatherFit Team',
   publisher: 'WeatherFit Team',
-  metadataBase: new URL('https://weatherfit.example.com'),
+  metadataBase: new URL('https://weather-fit-eta.vercel.app'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
