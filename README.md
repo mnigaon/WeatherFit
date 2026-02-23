@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌤️ WeatherFit
 
-## Getting Started
+> **Weather-based outfit & activity recommendations**
 
-First, run the development server:
+WeatherFit is a mobile-first web app that suggests what to wear and what to do based on your current local weather. Built with Next.js and powered by OpenWeather API.
 
+🔗 **Live Demo**: [weather-fit-eta.vercel.app](https://weather-fit-eta.vercel.app)
+
+---
+
+## ✨ Features
+
+- 📍 **Auto Location** — Detects your current location via GPS
+- 🔍 **City Search** — Search any city worldwide
+- 🔖 **Save Cities** — Bookmark your favorite cities for quick access
+- 👕 **Outfit Recommendations** — Get dressed right for the weather
+- 🎯 **Activity Suggestions** — Indoor & outdoor activity ideas
+- 📅 **Weekly Forecast** — 7-day temperature & rain overview
+- 🕐 **Hourly Forecast** — Next 24-hour weather timeline
+- 💨 **Air Quality** — Real-time AQI and pollutant data
+- 🌡️ **Unit Toggle** — Switch between °C and °F
+- 🎨 **Dynamic Themes** — Background changes based on weather condition
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tech |
+|---|---|
+| Framework | [Next.js 14](https://nextjs.org) (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Icons | [Lucide React](https://lucide.dev) |
+| Weather Data | [OpenWeather API](https://openweathermap.org/api) |
+| Deployment | [Vercel](https://vercel.com) |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mnigaon/WeatherFit.git
+cd WeatherFit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set up environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+OPENWEATHER_API_KEY=your_openweather_api_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+Get your free API key at [openweathermap.org](https://openweathermap.org/api).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── weather/        # Weather data API route
+│   │   ├── airquality/     # Air quality API route
+│   │   └── recommend/      # Outfit & activity logic
+│   ├── activities/         # Activities page
+│   ├── airquality/         # Air quality page
+│   ├── hourly/             # Hourly forecast page
+│   ├── outfit/             # Outfit recommendation page
+│   ├── settings/           # Settings page
+│   ├── weekly/             # Weekly forecast page
+│   ├── layout.tsx          # Root layout & metadata
+│   └── page.tsx            # Home page
+├── components/
+│   └── Navigation.tsx      # Bottom tab navigation
+├── lib/
+│   └── utils.ts            # Temperature conversion utilities
+├── providers/
+│   └── WeatherProvider.tsx # Global weather state (Context)
+└── types/
+    └── index.ts            # TypeScript type definitions
+```
+
+---
+
+## 🌍 Deployment
+
+This project is deployed on **Vercel**. To deploy your own:
+
+1. Push to GitHub
+2. Import the repo at [vercel.com/new](https://vercel.com/new)
+3. Add the following Environment Variables in Vercel:
+   - `OPENWEATHER_API_KEY`
+4. Deploy!
+
+---
+
+## 📄 License
+
+MIT License — feel free to use and modify.
